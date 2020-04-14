@@ -10,7 +10,12 @@ const pokemon = [
 ];
 
 const getImageUrl = (id) => {
-	return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+	id = id.toString();
+
+	while (id.length < 3) {
+		id = 0 + id;
+	}
+	return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png`;
 };
 
 const getRandomTeam = (teamSize = 4) => {
